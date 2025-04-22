@@ -17,7 +17,7 @@ class AppShell extends StatelessWidget {
             child: Column(
               children: [
                 if (MediaQuery.of(context).size.width < 1200) 
-                  const _MobileAppBar(),
+                  //const _MobileAppBar(),
                 Expanded(child: child),
               ],
             ),
@@ -119,7 +119,7 @@ class _DesktopNavigationRail extends StatelessWidget {
   }
 }
 
-class _MobileAppBar extends StatelessWidget {
+/*class _MobileAppBar extends StatelessWidget {
   const _MobileAppBar();
 
   @override
@@ -158,7 +158,7 @@ class _MobileAppBar extends StatelessWidget {
       ],
     );
   }
-}
+}*/
 
 class _MobileBottomNav extends StatelessWidget {
   const _MobileBottomNav();

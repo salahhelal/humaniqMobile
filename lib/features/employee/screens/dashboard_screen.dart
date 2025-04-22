@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:humaniq/shared/widgets/dashboard_drawer.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -16,9 +17,9 @@ class DashboardScreen extends StatelessWidget {
               label: Text('3'),
               child: Icon(Icons.notifications),
             ),
-            onPressed: () {
+            onPressed: () => context.go('/dashboard/notifications'),
               // TODO: Show notifications
-            },
+            
           ),
           // Profile Menu
           PopupMenuButton(
@@ -26,17 +27,20 @@ class DashboardScreen extends StatelessWidget {
               backgroundImage: AssetImage('assets/img/anonyme.jpg'),
             ),
             itemBuilder: (context) => [
-              const PopupMenuItem(
-                child: Text('Profile'),
+              PopupMenuItem(
+                child: const Text('Profile'),
                 value: 'profile',
+                onTap: () => context.go('/dashboard/profile'),
               ),
-              const PopupMenuItem(
-                child: Text('Settings'),
+              PopupMenuItem(
+                child: const Text('Settings'),
                 value: 'settings',
+                onTap: () => context.go('/dashboard/settings'),
               ),
               const PopupMenuItem(
                 child: Text('Logout'),
                 value: 'logout',
+                // TODO: Implement logout
               ),
             ],
             onSelected: (value) {
