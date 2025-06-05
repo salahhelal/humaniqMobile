@@ -1,6 +1,6 @@
 {
-    "name": "humaniq",
-    "short_name": "humaniq",
+    "name": "flutterapp",
+    "short_name": "flutterapp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:humaniq/core/theme/theme.dart';
-import 'package:humaniq/core/utils/router.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'providers/chat_provider.dart';
+import 'providers/contract_provider.dart';
+import 'providers/department_provider.dart';
+import 'providers/event_provider.dart';
+import 'providers/leave_request_provider.dart';
+import 'providers/notification_provider.dart';
+import 'providers/payslip_provider.dart';
+import 'providers/user_list_provider.dart';
+import 'providers/user_provider.dart';
+import 'theme/theme.dart';
+import 'utils/router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +24,33 @@ void main() async {
         ChangeNotifierProvider(
           create: (context) => ThemeProvider(prefs),
         ),
-        // Add other providers here
+        ChangeNotifierProvider(
+          create: (context) => UserProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => UserListProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => DepartmentProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ContractProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PayslipProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => NotificationProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => EventProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => LeaveRequestProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ChatProvider(),
+        ),
       ],
       child: const MyApp(),
     ),
